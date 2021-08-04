@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1585
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TheImpossibleProblem", "TheImpossibleProblem\TheImpossibleProblem.pyproj", "{1E177D4A-F273-4D61-B241-10474594D601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E177D4A-F273-4D61-B241-10474594D601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E177D4A-F273-4D61-B241-10474594D601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58910515-CBDB-40D4-9DC4-CF97C02B92B3}
+	EndGlobalSection
+EndGlobal
