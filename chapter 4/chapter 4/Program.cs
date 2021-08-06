@@ -16,7 +16,7 @@ namespace chapter_4
 
             myAccount.SetName(theName);
 
-            Console.WriteLine($"myAccount's name is: {myAccount.GetName}");
+            Console.WriteLine($"myAccount's name is: {myAccount.GetName()}");
         }
     }
 
