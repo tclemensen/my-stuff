@@ -19,19 +19,4 @@ namespace chapter_4
             Console.WriteLine($"myAccount's name is: {myAccount.GetName()}");
         }
     }
-
-    class Account
-    {
-        private string name;
-
-        public void SetName(string accountName)
-        {
-            name = accountName;
-        }
-
-        public string GetName()
-        {
-            return name;
-        }
-    }
 }

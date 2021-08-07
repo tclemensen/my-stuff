@@ -3,36 +3,43 @@
 namespace ThreeNplusOne_CSharp
 {
     class Program
-    {        
+    {
         static void Main(string[] args)
         {
-           
-            int numIterations = 0;
+            Console.WriteLine("3xPlusOne counter");
 
-            Console.WriteLine("3xPlusOne");
+            Console.WriteLine("Enter Start Number:");
+            int startNum = int.Parse(Console.ReadLine());
 
-            myCalc(10);
+            Console.WriteLine("Enter the desired number of iterations");
+            int numIterations = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(numIterations);
-        }
-
-        public int myCalc(int x)
-        {
-            int numIterations = 0;
-            while (x != 1)
+            for (int x = startNum; x <= startNum + numIterations; x++)
             {
-                if (x % 2 == 0)
+                int i = DoTheCalculation(x); 
+
+                Console.WriteLine(x + " " + i);
+            }
+        }
+
+        static int DoTheCalculation(int n)
+        {
+            int i = 0;
+            while (n != 1)
                 {
-                    x = x / 2;
-                }
-                else
-                {
-                    x = (3 * x) + 1;
+                    if (n % 2 == 0)
+                    {
+                        n = n / 2;
+                    }
+                    else
+                    {
+                        n = (n * 3) + 1;
+                    }
+
+                i++;
                 }
 
-                numIterations++;
-            }
-            return numIterations;
+            return i;            
         }
-    }
+    } 
 }
