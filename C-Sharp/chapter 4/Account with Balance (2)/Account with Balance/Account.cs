@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Account_with_Balance
+namespace Account_with_Balance_Deposit_and_Withdrawal
 {
     class Account
     {

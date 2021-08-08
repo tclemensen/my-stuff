@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Account_with_Balance_Deposit_and_Withdrawal
 {
     class AccountTest
@@ -9,8 +10,10 @@ namespace Account_with_Balance_Deposit_and_Withdrawal
             Account account1 = new Account("Tom Bombadil", 50.00m);   // Setting initial values
             Account account2 = new Account("Frodo Baggins", -7.53m);
 
-            Console.WriteLine($"{account1.Name}'s balance is: {account1.Balance:C}"); // Displaying inital values
-            Console.WriteLine($"{account2.Name}'s balance is: {account2.Balance:C}");
+            DisplayAccount(account1);
+            DisplayAccount(account2);
+            // Console.WriteLine($"{account1.Name}'s balance is: {account1.Balance:C}"); // Displaying inital values
+            // Console.WriteLine($"{account2.Name}'s balance is: {account2.Balance:C}");
 
             Console.WriteLine("\nEnter deposit amount for account1: "); // Asks for input for how much to deposit on account1's balance
             decimal depositAmount = decimal.Parse(Console.ReadLine());
@@ -20,8 +23,10 @@ namespace Account_with_Balance_Deposit_and_Withdrawal
 
             // display current balances
 
-            Console.WriteLine($"{account1.Name}'s balance: {account1.Balance:C}");
-            Console.WriteLine($"{account2.Name}'s balance: {account2.Balance:C}");
+            DisplayAccount(account1);
+            DisplayAccount(account2);
+            //Console.WriteLine($"{account1.Name}'s balance: {account1.Balance:C}");
+            //Console.WriteLine($"{account2.Name}'s balance: {account2.Balance:C}");
 
             // prompt for, then read input
 
@@ -53,6 +58,11 @@ namespace Account_with_Balance_Deposit_and_Withdrawal
             Console.WriteLine($"{account1.Name}'s balance: {account1.Balance:C}");
             Console.WriteLine($"{account2.Name}'s balance: {account2.Balance:C}");
 
+        }
+
+        static void DisplayAccount(Account accountToDisplay)
+        {
+            Console.WriteLine($"{accountToDisplay.Name}'s balance: {accountToDisplay.Balance}");
         }
     }
 }
