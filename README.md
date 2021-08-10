@@ -1,3 +1,3 @@
 # my-stuff
 
-# Basically a series of non connected programs for my own learning purposes
+A series of non connected mini programs intended for my own learning purposes. Basically, this is just a test. 
