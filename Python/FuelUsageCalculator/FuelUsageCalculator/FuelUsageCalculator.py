@@ -9,10 +9,11 @@ def main():
 
     print("This is the awesome fuel consumption / cost calculator/estimator for a road trip")
 
-    askForInput()
+    result = askForInput()
 
-    ## results = askForInput()
-    # calculateValues(results[1],results[2],results[3],resu[4])
+    result2 = calculateValues(result[0], result[1], result[2], result[3])
+
+    printResult(result2[0], result2[1], result2[2], result2[3])
 
 
 def clearConsole():
@@ -24,19 +25,14 @@ def clearConsole():
 
 
 def askForInput():
-    print("Please enter estimated average fuel price: ")
-    fuelPrice = input()
-    tankSize = input("Enter the size of your fuel tank: ")
-    fuelConsumption = input(
-        "Enter estimated fuel consumption in l/100km (e.g 8.3): ")
-    kmDriven = input("Enter number of km: ")
 
-    results = [fuelPrice, tankSize, fuelConsumption, kmDriven]
+    fuelPrice = float(input("Enter the estimated average fuel price: "))
+    tankSize = float(input("Enter the size of your fuel tank in liter: "))
+    fuelConsumption = float(
+        input("Enter estimated fuel consumption in l/100km (e.g 8.3): "))
+    kmDriven = float(input("Enter number of km: "))
 
-    calculateValues(float(fuelPrice), float(tankSize),
-                    float(fuelConsumption), float(kmDriven))
-
-    return results
+    return [fuelPrice, tankSize, fuelConsumption, kmDriven]
 
 
 def calculateValues(fuelPrice, tankSize, mpg, kmDriven):
@@ -45,7 +41,10 @@ def calculateValues(fuelPrice, tankSize, mpg, kmDriven):
     fuelTotalPrice = fuelTotalAmount * fuelPrice
     # Assuming a safety margin of 12%.
     numberRefuelings = fuelTotalAmount/(tankSize * 0.88)
-    printResult(kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings)
+
+    ## printResult(kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings)
+
+    return [kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings]
 
 
 def printResult(kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings):
