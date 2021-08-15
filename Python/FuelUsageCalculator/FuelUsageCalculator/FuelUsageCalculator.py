@@ -9,7 +9,10 @@ def main():
 
     print("This is the awesome fuel consumption / cost calculator/estimator for a road trip")
 
-    results = askForInput()
+    askForInput()
+
+    ## results = askForInput()
+    # calculateValues(results[1],results[2],results[3],resu[4])
 
 
 def clearConsole():
@@ -30,10 +33,10 @@ def askForInput():
 
     results = [fuelPrice, tankSize, fuelConsumption, kmDriven]
 
-    return results  # Just to force an update
-
     calculateValues(float(fuelPrice), float(tankSize),
                     float(fuelConsumption), float(kmDriven))
+
+    return results
 
 
 def calculateValues(fuelPrice, tankSize, mpg, kmDriven):
