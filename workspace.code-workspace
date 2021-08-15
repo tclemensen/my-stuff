@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../LearningPython"
+		},
+		{
+			"name": "my-stuff",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

@@ -1,21 +1,58 @@
-#¤// simple (hopefully) fuel usage calculator that will estimate the amount of fuel used and the cost for a road trip
+# ¤// simple (hopefully) fuel usage calculator that will estimate the amount of fuel used and the cost for a road trip
 
-print("This is the awesome fuel consumption / cost calculator/estimator for a road trip")
-
-print("Please enter estimated average fuel price: ")
-fuelPrice=float(input())
-
-mpg=float(input("Enter estimated fuel consumption in l/100km (e.g 8.3): "))
-kmDriven=float(input("Enter number of km: "))
-tankSize=float(input("Enter the size of your fuel tank: "))
+import os
 
 
-fuelTotalAmount=(kmDriven*(mpg/100))
-fuelTotalPrice=fuelTotalAmount*fuelPrice
-numberRefuelings=fuelTotalAmount/(tankSize*0.88) ## Assuming a safety margin of 12% 
+def main():
 
-print("Based on the information you have given, this app estimates the following:")
-print("On a road trip of " + str(kmDriven) + " km, you will use " + str(fuelTotalAmount) + " liters of fuel")
-print("The total fuel cost will be "+ str(fuelTotalPrice) + " kr")
+    clearConsole()
 
-print("You will have to refuel " + str(round(numberRefuelings)) + " times")
+    print("This is the awesome fuel consumption / cost calculator/estimator for a road trip")
+
+    results = askForInput()
+
+
+def clearConsole():
+    if os.name in ("nt", "dos"):
+        command = "cls"
+    else:
+        command = "clear"
+    os.system(command)
+
+
+def askForInput():
+    print("Please enter estimated average fuel price: ")
+    fuelPrice = input()
+    tankSize = input("Enter the size of your fuel tank: ")
+    fuelConsumption = input(
+        "Enter estimated fuel consumption in l/100km (e.g 8.3): ")
+    kmDriven = input("Enter number of km: ")
+
+    results = [fuelPrice, tankSize, fuelConsumption, kmDriven]
+
+    return results
+
+    calculateValues(float(fuelPrice), float(tankSize),
+                    float(fuelConsumption), float(kmDriven))
+
+
+def calculateValues(fuelPrice, tankSize, mpg, kmDriven):
+
+    fuelTotalAmount = (kmDriven*(mpg/100))
+    fuelTotalPrice = fuelTotalAmount * fuelPrice
+    # Assuming a safety margin of 12%.
+    numberRefuelings = fuelTotalAmount/(tankSize * 0.88)
+    printResult(kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings)
+
+
+def printResult(kmDriven, fuelTotalAmount, fuelTotalPrice, numberRefuelings):
+    print("Based on the information you have given, this app estimates the following:")
+    print("On a road trip of " + str(kmDriven) + " km, you will use " +
+          str(round(fuelTotalAmount)) + " liters of fuel")
+    print("The total fuel cost will be " +
+          "{:,.2f}".format(fuelTotalPrice) + " kr")
+    print("You will have to refuel " + str(round(numberRefuelings)) + " times")
+
+
+if __name__ == "__main__":
+    main()
