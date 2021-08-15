@@ -30,7 +30,7 @@ def askForInput():
 
     results = [fuelPrice, tankSize, fuelConsumption, kmDriven]
 
-    return results
+    return results  # Just to force an update
 
     calculateValues(float(fuelPrice), float(tankSize),
                     float(fuelConsumption), float(kmDriven))
