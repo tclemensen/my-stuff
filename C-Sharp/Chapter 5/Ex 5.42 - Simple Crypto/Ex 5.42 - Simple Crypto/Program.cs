@@ -14,6 +14,8 @@ namespace Ex_5._42___Simple_Crypto
             // swap 1 and 3, and 2 and 4
             // display the result
 
+
+            
             int[] ciferOutput = { 0, 0, 0, 0 };
 
             Console.WriteLine("Enter a 4 digit whole number; ");
@@ -36,17 +38,11 @@ namespace Ex_5._42___Simple_Crypto
                 Console.WriteLine(ciferOutput[n]);
             }
 
-
-
-
-            string ciferComplete = Convert.ToString(ciferOutput[0]) + Convert.ToString(ciferOutput[1] + Convert.ToString(ciferOutput[2]) + Convert.ToString(ciferOutput[3]));
-
-
+            string ciferComplete = Convert.ToString(ciferOutput[2]) + Convert.ToString(ciferOutput[3] + Convert.ToString(ciferOutput[0]) + Convert.ToString(ciferOutput[1]));
+            
             Console.WriteLine($"Completed encryption: {ciferComplete:D4}");
-
-
-
-            // Does not work as intended -- Will come back to this later! I need a fucking break! 
         }
+
+
     }
 }
